@@ -30,7 +30,7 @@ export default {
       }
 
       // Altrimenti, esegui la chiamata API
-      let completeUrlMovie = `${store.movieUrl}?api_key=${store.apiKey}&query=${store.searchQuery}`;
+      let completeUrlMovie = `${store.movieUrl}?api_key=${store.apiKey}&query=${store.searchQuery}&language=it-IT`;
 
       axios
         .get(completeUrlMovie)

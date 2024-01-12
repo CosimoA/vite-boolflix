@@ -29,7 +29,7 @@ export default {
                 </div>
 
                 <div v-else v-for="(movie, i) in store.searchMovie" v-bind:key="movie.id">
-                    <AppCard />
+                    <AppCard v-bind:myMovie="movie" />
                 </div>
 
 
