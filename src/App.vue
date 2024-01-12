@@ -29,7 +29,6 @@ export default {
 </script>
 
 <template>
-  <h1>App</h1>
   <AppHeader />
   <AppMain />
   <AppCard />
