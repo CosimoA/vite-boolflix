@@ -6,7 +6,7 @@ import AppMain from './components/AppMain.vue'
 
 // Strumenti
 import { store } from './store';
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
   name: "App",
@@ -21,12 +21,32 @@ export default {
     return {
       store,
     }
+  },
+  methods: {
+    searchMovie() {
+      let completeUrlMovie = `${store.movieUrl}?api_key=${store.apiKey}&query=${store.searchQuery}`;
+      axios
+        .get(completeUrlMovie)
+        .then((response) => {
+          if (response.data.results.length === 0) {
+            store.errorMessage = "Nessun film trovato";
+            console.log(store.errorMessage);
+          } else {
+            store.searchMovie = response.data.results;
+            store.errorMessage = "";
+            console.log("RICERCA: " + store.searchQuery, response);
+          }
+        })
+        .catch((error) => {
+          console.error('Errore durante la chiamata API:', error);
+        })
+    }
   }
 }
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @search="searchMovie" />
   <AppMain />
 </template>
 

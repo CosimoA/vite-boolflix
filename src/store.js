@@ -2,7 +2,8 @@ import { reactive } from "vue";
 
 export const store = reactive({
     // URLs
-    /* Api */ apiUrl: "https://api.themoviedb.org/3/search/",
+    /* Movie */ movieUrl: "https://api.themoviedb.org/3/search/movie",
+    /* Series */ seriesUrl: "https://api.themoviedb.org/3/search/tv",
     /* Images */ imgUrl: "https://image.tmdb.org/t/p/w500/",
 
     //Chiave Api TMDB
@@ -14,5 +15,6 @@ export const store = reactive({
 
     // Search Parameters
     searchQuery: "",
+    errorMessage: "",
     searchLanguage: "it",
 });

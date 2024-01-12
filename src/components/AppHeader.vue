@@ -1,7 +1,13 @@
 <script>
+import { store } from '../store.js'
 
 export default {
     name: 'AppHeader',
+    data() {
+        return {
+            store
+        }
+    },
 }
 
 </script>
@@ -17,7 +23,8 @@ export default {
                 </div>
 
                 <div class="searchbar">
-                    <input type="text" placeholder="Cerca Film o Serie Tv">
+                    <input type="search" placeholder="Cerca Film o Serie Tv" v-model="store.searchQuery"
+                        @keyup.enter="$emit('search')" required>
                 </div>
 
             </div>
@@ -45,7 +52,7 @@ export default {
         width: 75px;
     }
 
-    input[type="text"] {
+    input[type="search"] {
         margin: 0 10px;
         padding: 10px;
         border: 1.5px solid #2b2b2b;
