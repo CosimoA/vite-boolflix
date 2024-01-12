@@ -2,8 +2,6 @@
 // Componenti
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
-import AppCard from './components/AppCard.vue'
-
 
 
 // Strumenti
@@ -16,7 +14,6 @@ export default {
   components: {
     AppHeader,
     AppMain,
-    AppCard,
 
   },
 
@@ -31,7 +28,6 @@ export default {
 <template>
   <AppHeader />
   <AppMain />
-  <AppCard />
 </template>
 
 <style lang="scss">

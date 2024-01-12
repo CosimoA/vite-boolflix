@@ -7,7 +7,37 @@ export default {
 </script>
 
 <template>
-    <h1>Card</h1>
+    <div class="card">
+        img 1
+    </div>
+    <div class="card">
+        img 1
+    </div>
+    <div class="card">
+        img 1
+    </div>
+    <div class="card">
+        img 1
+    </div>
+    <div class="card">
+        img 1
+    </div>
+    <div class="card">
+        img 1
+    </div>
+    <div class="card">
+        img 1
+    </div>
+    <div class="card">
+        img 1
+    </div>
 </template>
 
-<style></style>
+<style lang="scss">
+.card {
+    border: 2px solid black;
+    min-height: 500px;
+    min-width: 350px;
+    width: 25%;
+}
+</style>

@@ -29,20 +29,20 @@ export default {
 
 <style lang="scss">
 @use '../styles/general.scss';
+@use '../styles/partials/mixins.scss' as *;
 
 .header {
+
     background-color: #000;
 
     .container {
         .row {
-            justify-content: flex-end;
-            align-items: center;
+            @include center (space_b);
         }
     }
 
     .logo {
         width: 75px;
-        margin-right: auto;
     }
 
     input[type="text"] {
