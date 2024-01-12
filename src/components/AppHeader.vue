@@ -1,15 +1,14 @@
 <script>
-import { store } from '../store.js'
+import { store } from '../store.js';
 
 export default {
     name: 'AppHeader',
     data() {
         return {
-            store
-        }
+            store,
+        };
     },
-}
-
+};
 </script>
 
 <template>
@@ -24,7 +23,7 @@ export default {
 
                 <div class="searchbar">
                     <input type="search" placeholder="Cerca Film o Serie Tv" v-model="store.searchQuery"
-                        @keyup.enter="$emit('search')" required>
+                        @keyup.enter.once="$emit('search')" required>
                 </div>
 
             </div>
@@ -65,6 +64,7 @@ export default {
             border-color: #e50914;
             outline: none;
         }
+
     }
 }
 </style>

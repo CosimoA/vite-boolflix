@@ -1,13 +1,18 @@
 <script>
 
-import AppCard from './AppCard.vue'
+import AppCard from './AppCard.vue';
+import { store } from '../store';
 
 
 export default {
     name: 'AppMain',
     components: {
         AppCard,
-
+    },
+    data() {
+        return {
+            store,
+        };
     },
 }
 
@@ -19,8 +24,15 @@ export default {
         <div class="container">
 
             <div class="row">
+                <div v-if="store.errorMessage">
+                    <h2>{{ store.errorMessage }}</h2>
+                </div>
 
-                <AppCard />
+                <div v-else v-for="(movie, i) in store.searchMovie" v-bind:key="movie.id">
+                    <AppCard />
+                </div>
+
+
 
             </div>
 
@@ -34,7 +46,6 @@ export default {
 @use '../styles/partials/mixins.scss' as *;
 
 .main {
-    background-color: #2b2b2b;
     padding: 10px;
 
     .row {

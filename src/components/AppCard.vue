@@ -10,27 +10,6 @@ export default {
     <div class="card">
         img 1
     </div>
-    <div class="card">
-        img 1
-    </div>
-    <div class="card">
-        img 1
-    </div>
-    <div class="card">
-        img 1
-    </div>
-    <div class="card">
-        img 1
-    </div>
-    <div class="card">
-        img 1
-    </div>
-    <div class="card">
-        img 1
-    </div>
-    <div class="card">
-        img 1
-    </div>
 </template>
 
 <style lang="scss">

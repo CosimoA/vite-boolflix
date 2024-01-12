@@ -24,7 +24,14 @@ export default {
   },
   methods: {
     searchMovie() {
+      // Controlla se l'input è vuoto
+      if (this.store.searchQuery.trim() === '') {
+        return;
+      }
+
+      // Altrimenti, esegui la chiamata API
       let completeUrlMovie = `${store.movieUrl}?api_key=${store.apiKey}&query=${store.searchQuery}`;
+
       axios
         .get(completeUrlMovie)
         .then((response) => {
@@ -39,8 +46,8 @@ export default {
         })
         .catch((error) => {
           console.error('Errore durante la chiamata API:', error);
-        })
-    }
+        });
+    },
   }
 }
 </script>
