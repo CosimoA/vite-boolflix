@@ -15,6 +15,7 @@ export const store = reactive({
 
     // Search Parameters
     searchQuery: "",
-    errorMessage: "",
-    searchLanguage: "it",
+    errorMessageMovie: "",
+    errorMessageSeries: "",
+
 });

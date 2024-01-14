@@ -36,17 +36,34 @@ export default {
         .get(completeUrlMovie)
         .then((response) => {
           if (response.data.results.length === 0) {
-            store.errorMessage = "Nessun film trovato";
-            console.log(store.errorMessage);
+            store.errorMessageMovie = "Nessun Film trovato";
+            console.log(store.errorMessageMovie);
           } else {
             store.searchMovie = response.data.results;
-            store.errorMessage = "";
-            console.log("RICERCA: " + store.searchQuery, response);
+            store.errorMessageMovie = "";
+            console.log("RICERCA: " + store.searchQuery, response.data.results);
           }
         })
-        .catch((error) => {
-          console.error('Errore durante la chiamata API:', error);
-        });
+        .catch((err) => {
+          console.error('Errore durante la chiamata API:', err);
+        })
+
+      let completeUrlSeries = `${store.seriesUrl}?api_key=${store.apiKey}&query=${store.searchQuery}&language=it-IT`;
+      axios
+        .get(completeUrlSeries)
+        .then((response) => {
+          if (response.data.results.length === 0) {
+            store.errorMessageSeries = "Nessuna Serie Tv trovata";
+            console.log(store.errorMessageSeries);
+          } else {
+            store.searchSeries = response.data.results;
+            store.errorMessageSeries = "";
+            console.log("RICERCA: " + store.searchQuery, response.data.results);
+          }
+        })
+        .catch((err) => {
+          console.error('Errore durante la chiamata API:', err);
+        })
     },
   }
 }
