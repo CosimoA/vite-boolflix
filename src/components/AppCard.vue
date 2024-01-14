@@ -1,10 +1,23 @@
 <script>
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default {
     name: 'AppCard',
     props: {
         myMovie: Object
     },
+    methods: {
+        getFlagLanguage(language) {
+            switch (language) {
+                case 'en':
+                    return 'us';
+                case 'ja':
+                    return 'jp';
+                default:
+                    return language;
+            }
+        }
+    }
 }
 
 </script>
@@ -15,7 +28,9 @@ export default {
             <ul>
                 <li>Titolo Film:<br> <strong>{{ myMovie.title }}</strong></li>
                 <li>Titolo Originale:<br> <strong>{{ myMovie.original_title }}</strong></li>
-                <li>Lingua: <strong>{{ myMovie.original_language }}</strong></li>
+                <li>Lingua: <strong>{{ myMovie.original_language }}</strong>
+                    <span :class="`fi fi-${getFlagLanguage(myMovie.original_language)}`"></span>
+                </li>
                 <li>Voto: <strong>{{ myMovie.vote_average }}</strong>
                     <i v-for="n in 5" :key="n" class="fa-star"
                         :class="{ 'fa-solid': n <= Math.round(myMovie.vote_average / 2), 'fa-regular': n > Math.round(myMovie.vote_average / 2) }"
@@ -46,8 +61,7 @@ i {
     margin-left: 5px;
 }
 
-.flagicon {
-    color: white;
+.fi {
     width: 30px;
 }
 </style>

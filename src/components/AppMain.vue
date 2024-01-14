@@ -28,7 +28,7 @@ export default {
                     <h2>{{ store.errorMessage }}</h2>
                 </div>
 
-                <div v-else v-for="(movie, i) in store.searchMovie" v-bind:key="movie.id">
+                <div v-else v-for="(movie, i) in store.searchMovie" v-bind:key="movie.i">
                     <AppCard v-bind:myMovie="movie" />
                 </div>
 
