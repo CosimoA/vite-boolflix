@@ -28,4 +28,8 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    @else if $type =="row" {
+        flex-direction: row;
+    }
 }
