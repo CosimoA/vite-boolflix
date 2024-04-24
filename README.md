@@ -1,7 +1,27 @@
-# Vue 3 + Vite
+# Boolflix
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Boolflix is a project that replicates an interface inspired by Netflix, displaying data about movies and TV series obtained via API. The user can search for titles by typing a title (or part of it) in the search bar at the top right.
 
-## Recommended IDE Setup
+## Features
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Integration with an API to fetch movie and TV series data.
+- Search functionality to find titles by typing in the search bar.
+- Display of search results for both movies and TV series.
+- Information display upon hovering over the poster of a title.
+- Built with Vue.js, Vite, Axios, and Sass.
+
+## Demo
+
+To view the project, you can visit the [demo](https://cosimoa.github.io/vite-boolflix/).
+
+## Installation
+
+To run this project locally:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/CosimoA/vite-boolflix.git
+cd vite-boolflix
+npm i
+npm run serve
